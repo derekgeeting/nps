@@ -3,6 +3,8 @@ var app = express();
 app.set('jsonp callback',true);
 app.enable('jsonp callback');
 
+var port = process.env.PORT || 3000;
+
 app.get('/question.js/:questionId/:personId', function(req,res) {
   var questions = [
       'Do you like bacon?'
@@ -27,7 +29,7 @@ app.get('/question.js/:questionId/:personId', function(req,res) {
   if( questionId<questions.length && personId<people.length ) {
     var questionText = people[personId]+', '+questions[questionId];
     js  = "var response = confirm('"+questionText+"');\n";
-    js += "$.getJSON('http://localhost:3000/answer/questionId/personId/answer?callback=?',function(res){\n";
+    js += "$.getJSON('http://blkb-nps.herokuapp.com:"+port+"/answer/questionId/personId/answer?callback=?',function(res){\n";
     js += "console.dir(res);\n";
     js += "alert('Thanks for answering!\\nTotal responses so far: '+res.numAnswered);\n";
     js += "});\n";
@@ -42,7 +44,6 @@ app.get('/answer/:questionId/:personId/:answer', function(req,res) {
   });
 });
 
-var port = process.env.PORT || 3000;
 app.listen(port, function() {
   console.log('listening on port '+port);
 });
