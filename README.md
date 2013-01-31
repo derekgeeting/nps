@@ -1,0 +1,1 @@
+basic example of how to do cross site javascript using JSONP in a node app
