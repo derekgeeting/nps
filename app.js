@@ -11,13 +11,10 @@ app.get('/question.js/:questionId/:personId', function(req,res) {
     , 'Are you going to answer no?'
   ];
   var people = [
-      'Chris'
-    , 'Jason'
+      'Jason'
     , 'Don'
     , 'Derek'
-    , 'Maciek'
-    , 'Jim'
-    , 'Alyssa'
+    , 'Maciej'
     , 'Alex'
     , 'Casey'
   ];
