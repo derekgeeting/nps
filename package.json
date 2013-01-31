@@ -1,0 +1,20 @@
+{
+  "name": "nps",
+  "version": "0.0.1",
+  "author": "derekgeeting@gmail.com",
+  "scripts": {
+    "start": "node app"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies" : {
+    "express" : "*"
+  },
+  "engines" : {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  }
+}
