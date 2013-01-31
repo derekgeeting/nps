@@ -29,7 +29,7 @@ app.get('/question.js/:questionId/:personId', function(req,res) {
   if( questionId<questions.length && personId<people.length ) {
     var questionText = people[personId]+', '+questions[questionId];
     js  = "var response = confirm('"+questionText+"');\n";
-    js += "$.getJSON('http://blkb-nps.herokuapp.com:"+port+"/answer/questionId/personId/answer?callback=?',function(res){\n";
+    js += "$.getJSON('http://blkb-nps.herokuapp.com/answer/questionId/personId/answer?callback=?',function(res){\n";
     js += "console.dir(res);\n";
     js += "alert('Thanks for answering!\\nTotal responses so far: '+res.numAnswered);\n";
     js += "});\n";
